@@ -4,7 +4,7 @@ if (! function_exists('formatBits')) {
     function formatBits(int $bits, $precision = 2, $suffix = true)
     {
         if ($bits > 0) {
-            $i = floor(log($bits) / log(1000));
+            $i = floor(log(0.1*$bits) / log(1000));
 
             if (! $suffix) {
                 return round($bits / pow(1000, $i), $precision);
